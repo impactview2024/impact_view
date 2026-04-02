@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>임팩트뷰 — 효과있는 마케팅은 따로 있습니다</title>
+  <meta name="description" content="임팩트뷰는 네이버 플레이스, 블로그, 인스타그램 마케팅 전문 회사입니다. 고객 만족도 93%, 재계약률 90%+의 실력으로 증명합니다." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- SVG filter: liquid glass distortion -->
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <filter id="glass-filter" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.75 0.75" numOctaves="3" seed="5" stitchTiles="stitch" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- ==============================
+       NAVIGATION
+  ============================== -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">
+          <img src="images/logo.png" alt="임팩트뷰" class="nav-logo-img" />
+        </a>
+
+        <nav class="nav-menu" aria-label="주메뉴">
+          <a href="#about">임팩트뷰?</a>
+          <a href="#services">서비스소개</a>
+          <a href="#process">진행방식</a>
+          <a href="#reviews">성공사례</a>
+          <a href="#contact" class="nav-cta"><span class="nav-cta-text">문의하기</span></a>
+        </nav>
+
+        <button class="nav-hamburger" aria-label="메뉴 열기" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- ==============================
+       HERO
+  ============================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title display-font">
+          <span class="line-wrap"><span class="line line--1">효과있는</span></span>
+          <span class="line-wrap"><span class="line line--2"><span class="shimmer-word">마케팅은</span></span></span>
+          <span class="line-wrap"><span class="line line--3">따로 있습니다<span class="cursor-blink">!</span></span></span>
+        </h1>
+
+        <p class="hero-sub blur-reveal">
+          마케팅은 <strong>임팩트뷰</strong>한테 맡기고,<br />
+          대표님은 제일 잘하는 <strong>본업에만 집중</strong>하세요!
+        </p>
+
+        <p class="hero-desc" data-word-stagger>
+          몸은 하나인데 매장운영, 직원관리, 마케팅까지 직접 하시나요?
+          임팩트뷰를 온라인상 유능한 마케팅 직원으로 채용해주세요!
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary hero-glass-btn">
+            <span class="nav-cta-text">무료 상담 신청하기</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll__mouse">
+        <div class="hero-scroll__dot"></div>
+      </div>
+      <span class="hero-scroll__label">scroll</span>
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       STATS
+  ============================== -->
+  <section class="stats" id="about">
+    <div class="container">
+      <div class="stats-header">
+        <div class="stats-kicker">임팩트뷰 실적</div>
+        <h2 class="stats-title display-font">
+          고객 기억에 남는 임팩트 있는 매장,<br />
+          <span class="stats-title-accent">임팩트뷰가 만들어드립니다.</span>
+        </h2>
+      </div>
+
+      <div class="stats-shell">
+        <div class="stats-strip" aria-label="임팩트뷰 주요 실적">
+          <article class="stat-inline">
+            <div class="stat-label">누적 클라이언트</div>
+            <div class="stat-number" data-target="10931" data-suffix="+">0</div>
+          </article>
+
+          <article class="stat-inline">
+            <div class="stat-label">고객 만족도</div>
+            <div class="stat-number" data-target="93" data-suffix="%+">0</div>
+          </article>
+
+          <article class="stat-inline">
+            <div class="stat-label">재계약률</div>
+            <div class="stat-number" data-target="90" data-suffix="%+">0</div>
+          </article>
+        </div>
+      </div>
+
+      <p class="stats-tagline">
+        임팩트뷰는 백마디 말보다 한 번의 행동으로 증명합니다.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       WHY (Problem Statement)
+  ============================== -->
+  <section class="why" id="why">
+    <div class="container">
+      <div class="why-layout reveal">
+
+        <!-- 왼쪽: 텍스트 -->
+        <div class="why-text-block">
+          <div class="stats-kicker why-slide-in" style="--slide-delay:0ms;">검색이 곧 매출입니다</div>
+          <h2 class="why-headline display-font why-slide-in" style="--slide-delay:120ms;">구매 <span class="why-headline-equals">=</span> 검색</h2>
+
+          <div class="why-points">
+            <p class="why-point-lead why-slide-in" style="--slide-delay:240ms;">
+              대부분의 고객은 네이버에 지역+업종을 꼭 검색합니다!<br />
+              <span class="why-point-sub">대표님조차도 무언가를 알아볼 때 네이버 검색하시지 않으세요?</span>
+            </p>
+
+            <p class="why-point-lead why-slide-in" style="--slide-delay:360ms;">
+              보이지 않고 리뷰가 없다면 방문과 구매가 이루어질 수 없습니다!<br />
+              <span class="why-point-sub">상위에 노출되고, 좋은 리뷰가 쌓여야 고객이 찾아옵니다.</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- 오른쪽: 이미지 -->
+        <div class="why-img-card">
+          <img src="images/map.png" alt="네이버 지도 검색 예시" />
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       SERVICES
+  ============================== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="stats-kicker reveal">서비스 소개</div>
+        <h2 class="section-title display-font reveal">
+          임팩트뷰 <span class="gradient-text">올인원 패키지!</span>
+        </h2>
+        <p class="section-desc reveal">
+          필요한 마케팅 채널만 선택하거나, 모든 채널을 한번에 운영하세요.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Service 1 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <img src="images/naver_place.jpeg" alt="네이버 플레이스 로고" class="service-logo service-logo--place" />
+          </div>
+          <h3 class="service-name display-font">플레이스 육성</h3>
+          <p class="service-desc">
+            플레이스 최적화, 키워드 설정, 이미지 제작 등<br />
+            대표님의 플레이스를 <strong>핫플레이스로 만들어드립니다!</strong>
+          </p>
+          <div class="service-tags">
+            <span class="tag">상위노출</span>
+            <span class="tag">키워드최적화</span>
+            <span class="tag">이미지제작</span>
+            <span class="tag">리뷰관리</span>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">
+            <img src="images/naver_blog.png" alt="네이버 블로그 로고" class="service-logo service-logo--blog" />
+          </div>
+          <h3 class="service-name display-font">블로그</h3>
+          <p class="service-desc">
+            실유저만을 활용한 리뷰 작성을 통하여<br />
+            <strong>고객의 방문 고민을 확정으로 만들어드립니다!</strong>
+          </p>
+          <div class="service-tags">
+            <span class="tag">블로그최적화</span>
+            <span class="tag">실유저리뷰</span>
+            <span class="tag">상위노출</span>
+            <span class="tag">브랜딩</span>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">
+            <img src="images/instagram.webp" alt="인스타그램 로고" class="service-logo service-logo--instagram" />
+          </div>
+          <h3 class="service-name display-font">인스타그램</h3>
+          <p class="service-desc">
+            전세계에서 사용하고 있는 인스타그램을 통하여<br />
+            <strong>대표님의 플레이스를 눈에 띄게 만들어드립니다!</strong>
+          </p>
+          <div class="service-tags">
+            <span class="tag">인기게시물</span>
+            <span class="tag">팔로워증가</span>
+            <span class="tag">콘텐츠제작</span>
+            <span class="tag">광고집행</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       PROCESS
+  ============================== -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header">
+        <div class="stats-kicker reveal">진행 방식</div>
+        <h2 class="section-title display-font reveal">
+          임팩트뷰와 진행하신다면?
+        </h2>
+        <p class="section-desc reveal">
+          영업사원이 아닌 전문가가 모인 조직인 만큼,<br />말보단 결과로써 보여드립니다!
+        </p>
+      </div>
+
+      <div class="process-steps">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <div class="step-title">상담 문의</div>
+          <div class="step-desc">카카오 채널 또는 문의폼으로 편하게 연락해주세요</div>
+        </div>
+        <div class="step reveal reveal-delay-1">
+          <div class="step-num">2</div>
+          <div class="step-title">전문 마케터 배정</div>
+          <div class="step-desc">자격증 보유 전문 마케터가 직접 담당합니다</div>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <div class="step-num">3</div>
+          <div class="step-title">주변 상권 분석</div>
+          <div class="step-desc">경쟁 업체 및 지역 트렌드를 데이터로 분석합니다</div>
+        </div>
+        <div class="step reveal reveal-delay-3">
+          <div class="step-num">4</div>
+          <div class="step-title">맞춤 컨설팅</div>
+          <div class="step-desc">분석 결과 기반 최적화된 마케팅 전략을 제안합니다</div>
+        </div>
+        <div class="step reveal reveal-delay-4">
+          <div class="step-num">5</div>
+          <div class="step-title">계약 체결</div>
+          <div class="step-desc">투명한 조건과 명확한 목표로 계약을 진행합니다</div>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">6</div>
+          <div class="step-title">광고 집행 & 레포트</div>
+          <div class="step-desc">실시간 성과 레포트로 진행 현황을 공유합니다</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       AWARDS
+  ============================== -->
+  <section class="awards-proof" id="awards">
+    <div class="container">
+      <div class="awards-proof__inner">
+        <div class="awards-proof__copy reveal">
+          <h2 class="awards-proof__title display-font">
+            <span class="awards-proof__accent">“임팩트뷰”</span>를 해야 하는
+            <br />
+            이유는 수치가 증명합니다.
+          </h2>
+          <p class="awards-proof__desc">
+            2024년&amp;2025년 2년 연속 소비자 만족도 대상 수상
+          </p>
+        </div>
+
+        <div class="awards-proof__cards reveal reveal-delay-1" aria-label="임팩트뷰 수상 상장">
+          <figure class="award-poster award-poster--2024">
+            <img
+              src="images/grand_01_2024.jpeg"
+              alt="2024 소비자만족도 대상 상장"
+              loading="lazy"
+            />
+          </figure>
+
+          <figure class="award-poster award-poster--2025">
+            <img
+              src="images/grand_02_2025.png"
+              alt="2025 소비자만족도 대상 상장"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       REVIEWS
+  ============================== -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <div class="stats-kicker reveal">실제 후기</div>
+        <h2 class="section-title display-font reveal">
+          실제 고객 <span class="gradient-text">후기</span>
+        </h2>
+        <p class="section-desc reveal">
+          실제 고객 의뢰 기반으로 정리한 피드백입니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="reviews-track-wrapper">
+      <div class="reviews-track">
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            순위 변화랑 진행 내용 계속 공유해주셔서
+            지금 상태를 바로 확인할 수 있었어요.
+            꾸준히 관리해주시는 느낌이라 믿고 맡길 수 있었습니다.
+          </p>
+          <div class="review-author">
+            <div class="review-avatar">박</div>
+            <div class="review-info">
+              <div class="review-name">익명 사장님</div>
+              <div class="review-biz">헤어샵 운영</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            이전보다 순위가 올라가는 게 눈에 보여서 좋았습니다.
+            중간중간 리포트도 보내주시고 진행 상황을 알 수 있어서 편했어요.
+          </p>
+          <div class="review-author">
+            <div class="review-avatar">이</div>
+            <div class="review-info">
+              <div class="review-name">익명 대표님</div>
+              <div class="review-biz">음식점 운영</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            문의드리면 답변도 빠르고,
+            어떤 작업이 진행되는지 계속 안내해주셔서
+            전체 흐름을 이해하기 쉬웠습니다.
+          </p>
+          <div class="review-author">
+            <div class="review-avatar">최</div>
+            <div class="review-info">
+              <div class="review-name">익명 원장님</div>
+              <div class="review-biz">피부관리샵 운영</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            보고서를 보기 쉽게 정리해주셔서
+            순위 변동이나 결과를 한눈에 확인할 수 있었어요.
+            관리가 체계적인 느낌이었습니다.
+          </p>
+          <div class="review-author">
+            <div class="review-avatar">정</div>
+            <div class="review-info">
+              <div class="review-name">익명 사장님</div>
+              <div class="review-biz">카페 운영</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            키워드 순위가 점점 올라가는 흐름이 보여서 만족했습니다.
+            단순 작업이 아니라 계속 신경써서 관리해주는 느낌이었어요.
+          </p>
+          <div class="review-author">
+            <div class="review-avatar">김</div>
+            <div class="review-info">
+              <div class="review-name">익명 대표님</div>
+              <div class="review-biz">학원 운영</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            매달 진행 내용과 변화를 정리해서 전달해주셔서
+            따로 확인하지 않아도 상황을 파악할 수 있어서 좋았습니다.
+            전체적으로 만족도가 높은 편이에요.
+          </p>
+          <div class="review-author">
+            <div class="review-avatar">윤</div>
+            <div class="review-info">
+              <div class="review-name">익명 사장님</div>
+              <div class="review-biz">인테리어 운영</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       CTA
+  ============================== -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="cta-content">
+          <div class="stats-kicker" style="margin: 0 auto 24px;">무료 상담</div>
+          <h2 class="cta-title display-font">
+            지금 바로<br />
+            <span class="gradient-text">상담 신청하세요</span>
+          </h2>
+          <p class="cta-desc">
+            전담 마케터가 24시간 이내에 연락드립니다.<br />
+            부담 없이 현재 상황을 공유해주세요.
+          </p>
+
+          <div class="contact-form-wrap">
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate style="scroll-margin-top: 100px;">
+              <input type="hidden" name="access_key" value="adc60534-29cf-4683-86ba-4464d4e2f970" />
+              <input type="hidden" name="subject" value="임팩트뷰 무료 상담 문의" />
+              <input type="hidden" name="from_name" value="임팩트뷰 홈페이지" />
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" />
+
+              <div class="form-section-title">문의 정보</div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="companyName">사업자명 <span class="required">*</span></label>
+                  <input type="text" id="companyName" name="company_name" class="form-input" placeholder="사업자명을 입력해주세요" autocomplete="organization" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="ownerName">담당자 성함 <span class="required">*</span></label>
+                  <input type="text" id="ownerName" name="name" class="form-input" placeholder="담당자 성함을 입력해주세요" autocomplete="name" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="phone">담당자 연락처 <span class="required">*</span></label>
+                  <input type="tel" id="phone" name="phone" class="form-input" placeholder="010-0000-0000" autocomplete="tel" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="email">담당자 email <span class="required">*</span></label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="example@email.com" autocomplete="email" required />
+                </div>
+              </div>
+
+              <hr class="form-divider" />
+
+              <div class="form-section-title">업종</div>
+              <div class="form-group">
+                <div class="industry-options">
+                  <label class="industry-label"><input type="checkbox" name="industry" value="대행사" />대행사</label>
+                  <label class="industry-label"><input type="checkbox" name="industry" value="커머스/유통" />커머스/유통</label>
+                  <label class="industry-label"><input type="checkbox" name="industry" value="소상공인" />소상공인</label>
+                  <label class="industry-label"><input type="checkbox" name="industry" value="전문직" />전문직</label>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-submit">문의 등록하기</button>
+                <button type="reset" class="btn-cancel">취소</button>
+              </div>
+            </form>
+          </div>
+
+          <p class="cta-note">입력해주신 정보를 바탕으로 순차 연락드립니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/logo.png" alt="임팩트뷰 로고" class="footer-logo-img" />
+          </div>
+          <p class="footer-tagline">
+            데이터 기반 마케팅으로 대표님의 매장에<br />
+            진짜 임팩트를 만들어드립니다.
+          </p>
+          <div class="footer-contact">
+            <p>사업자등록번호: 411-21-63549</p>
+            <p>통신판매업 신고번호: 제2024-경기김포-8169호</p>
+            <p>주소: 경기도 김포시 김포한강5로 321</p>
+            <p>이메일: <a href="mailto:impactview@naver.com">impactview@naver.com</a></p>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-nav-title">메뉴</div>
+          <ul class="footer-nav-list">
+            <li><a href="#about">임팩트뷰?</a></li>
+            <li><a href="#services">서비스소개</a></li>
+            <li><a href="#process">진행방식</a></li>
+            <li><a href="#reviews">성공사례</a></li>
+            <li><a href="#contact">문의하기</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-nav-title">문의하기</div>
+          <ul class="footer-nav-list">
+            <li>
+              <a href="https://www.instagram.com/impactview_official/" target="_blank" rel="noopener" class="footer-social-link">
+                <img src="images/instagram.webp" alt="인스타그램" class="footer-social-icon" />
+                인스타그램
+              </a>
+            </li>
+            <li>
+              <a href="https://pf.kakao.com/_RxnWxdn" target="_blank" rel="noopener" class="footer-social-link">
+                <img src="images/kakao.webp" alt="카카오톡" class="footer-social-icon" />
+                카카오톡 채널
+              </a>
+            </li>
+            <li>
+              <a href="https://blog.naver.com/impactview" target="_blank" rel="noopener" class="footer-social-link">
+                <img src="images/naver_blog.png" alt="네이버 블로그" class="footer-social-icon" />
+                네이버 블로그
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2024 임팩트뷰. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==============================
+       KAKAO FLOAT BUTTON
+  ============================== -->
+  <div class="kakao-float">
+    <div class="kakao-tooltip">카카오로 상담하기</div>
+    <a href="https://pf.kakao.com/_RxnWxdn" target="_blank" rel="noopener" class="kakao-btn" aria-label="카카오 상담">
+      <img src="images/kakao.webp" alt="" />
+    </a>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
