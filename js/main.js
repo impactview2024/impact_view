@@ -2,25 +2,37 @@
    IMPACTVIEW — Main JavaScript
    ============================================ */
 
-// ── Hero Vanta background ──
+// ── Hero Vanta background (desktop only) ──
 const heroSection = document.querySelector('#hero');
 
-if (heroSection && window.VANTA?.CLOUDS) {
-  window.VANTA.CLOUDS({
-    el: heroSection,
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200,
-    minWidth: 200,
-    backgroundColor: 0x0,
-    skyColor: 0x0,
-    cloudColor: 0x5858e6,
-    cloudShadowColor: 0x0,
-    sunColor: 0x50200,
-    sunGlareColor: 0x0,
-    sunlightColor: 0x0
-  });
+if (heroSection && window.innerWidth >= 768) {
+  const threeScript = document.createElement('script');
+  threeScript.src = 'https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js';
+  threeScript.onload = () => {
+    const vantaScript = document.createElement('script');
+    vantaScript.src = 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js';
+    vantaScript.onload = () => {
+      if (window.VANTA?.CLOUDS) {
+        window.VANTA.CLOUDS({
+          el: heroSection,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200,
+          minWidth: 200,
+          backgroundColor: 0x0,
+          skyColor: 0x0,
+          cloudColor: 0x5858e6,
+          cloudShadowColor: 0x0,
+          sunColor: 0x50200,
+          sunGlareColor: 0x0,
+          sunlightColor: 0x0
+        });
+      }
+    };
+    document.head.appendChild(vantaScript);
+  };
+  document.head.appendChild(threeScript);
 }
 
 // ── Hero desc — word stagger ──
