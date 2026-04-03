@@ -430,6 +430,7 @@ img { max-width: 100%; display: block; }
    ============================================ */
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   position: relative;
@@ -454,9 +455,29 @@ img { max-width: 100%; display: block; }
 /* 모바일 전용 배경 영상 */
 .hero-video-bg {
   display: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
 }
 
-@media (max-width: 767px) {
+.hero-video-bg.is-ready {
+  opacity: 0.72;
+  visibility: visible;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+    padding: 112px 0 72px;
+  }
+
+  .hero-bg {
+    background:
+      linear-gradient(180deg, rgba(7, 7, 15, 0.18) 0%, rgba(7, 7, 15, 0.72) 100%),
+      url('../images/hero-clouds-poster.jpg') center / cover no-repeat;
+  }
+
   .hero-video-bg {
     display: block;
     position: absolute;
@@ -464,7 +485,43 @@ img { max-width: 100%; display: block; }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.75;
+    transform: translateZ(0);
+  }
+
+  .orb,
+  .hero-grid {
+    display: none;
+  }
+
+  .hero-content::before {
+    inset: -24px -14px;
+    background: linear-gradient(
+      180deg,
+      rgba(7, 7, 15, 0.82) 0%,
+      rgba(7, 7, 15, 0.5) 58%,
+      rgba(7, 7, 15, 0.16) 100%
+    );
+    filter: none;
+  }
+
+  .hero-sub {
+    filter: none;
+    animation-name: fade-up;
+  }
+
+  .nav {
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .nav.scrolled {
+    background: rgba(7, 7, 15, 0.94);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .nav-menu.open {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 
@@ -927,6 +984,32 @@ img { max-width: 100%; display: block; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-video-bg {
+    display: none !important;
+  }
+
+  .line,
+  .shimmer-word,
+  .cursor-blink,
+  .hero-actions,
+  .hero-desc .word,
+  .orb {
+    animation: none !important;
+  }
+
+  .line,
+  .hero-actions,
+  .hero-desc .word {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-sub {
+    opacity: 1;
+    filter: none;
+    animation: none;
+  }
+
   .why-slide-in {
     opacity: 1;
     transform: none;
@@ -1895,7 +1978,8 @@ img { max-width: 100%; display: block; }
     position: fixed;
     inset: 72px 0 0 0;
     background: rgba(7,7,15,0.97);
-    backdrop-filter: blur(20px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     padding: 32px 24px;
     gap: 4px;
     z-index: 99;

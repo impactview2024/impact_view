@@ -107,7 +107,19 @@
   ============================== -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <video class="hero-video-bg" autoplay muted loop playsinline>
+      <video
+        class="hero-video-bg"
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        preload="none"
+        poster="images/hero-clouds-poster.jpg"
+        aria-hidden="true"
+        tabindex="-1"
+        disablepictureinpicture
+        disableremoteplayback
+      >
         <source src="images/hero-clouds-5s.mp4" type="video/mp4" />
       </video>
       <div class="orb orb-1"></div>

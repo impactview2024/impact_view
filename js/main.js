@@ -4,8 +4,19 @@
 
 // ── Hero Vanta background (desktop only) ──
 const heroSection = document.querySelector('#hero');
+const heroVideo = document.querySelector('.hero-video-bg');
+const mobileViewportQuery = window.matchMedia('(max-width: 768px)');
+const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-if (heroSection && window.innerWidth >= 768) {
+function shouldUseMobileHeroVideo() {
+  const saveDataEnabled = navigator.connection?.saveData === true;
+  const lowMemoryDevice =
+    typeof navigator.deviceMemory === 'number' && navigator.deviceMemory <= 4;
+
+  return mobileViewportQuery.matches && !reducedMotionQuery.matches && !saveDataEnabled && !lowMemoryDevice;
+}
+
+if (heroSection && window.innerWidth > 768) {
   const threeScript = document.createElement('script');
   threeScript.src = 'https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js';
   threeScript.onload = () => {
@@ -35,6 +46,65 @@ if (heroSection && window.innerWidth >= 768) {
   document.head.appendChild(threeScript);
 }
 
+if (heroSection && heroVideo) {
+  const playHeroVideo = () => {
+    if (!shouldUseMobileHeroVideo() || document.visibilityState !== 'visible') {
+      return;
+    }
+
+    const playPromise = heroVideo.play();
+
+    if (playPromise?.catch) {
+      playPromise.catch(() => {});
+    }
+  };
+
+  const pauseHeroVideo = () => {
+    heroVideo.pause();
+  };
+
+  if (shouldUseMobileHeroVideo()) {
+    const revealHeroVideo = () => {
+      heroVideo.classList.add('is-ready');
+    };
+
+    heroVideo.preload = 'auto';
+
+    heroVideo.addEventListener('loadeddata', revealHeroVideo, { once: true });
+
+    if (heroVideo.readyState >= 2) {
+      revealHeroVideo();
+    }
+
+    heroVideo.load();
+    playHeroVideo();
+
+    const heroVideoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          playHeroVideo();
+          return;
+        }
+
+        pauseHeroVideo();
+      });
+    }, { threshold: 0.18 });
+
+    heroVideoObserver.observe(heroSection);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        pauseHeroVideo();
+        return;
+      }
+
+      if (heroSection.getBoundingClientRect().bottom > 0) {
+        playHeroVideo();
+      }
+    });
+  }
+}
+
 // ── Hero desc — word stagger ──
 const descEl = document.querySelector('[data-word-stagger]');
 if (descEl) {
@@ -51,13 +121,23 @@ if (descEl) {
 // ── Nav scroll behavior ──
 const nav = document.querySelector('.nav');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 20) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
-}, { passive: true });
+if (nav) {
+  let navScrollTicking = false;
+
+  const syncNavScrollState = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+    navScrollTicking = false;
+  };
+
+  syncNavScrollState();
+
+  window.addEventListener('scroll', () => {
+    if (navScrollTicking) return;
+
+    navScrollTicking = true;
+    window.requestAnimationFrame(syncNavScrollState);
+  }, { passive: true });
+}
 
 // ── Mobile menu ──
 const hamburger = document.querySelector('.nav-hamburger');
