@@ -451,6 +451,23 @@ img { max-width: 100%; display: block; }
   pointer-events: none;
 }
 
+/* 모바일 전용 배경 영상 */
+.hero-video-bg {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .hero-video-bg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+  }
+}
+
 .orb {
   position: absolute;
   border-radius: 50%;
